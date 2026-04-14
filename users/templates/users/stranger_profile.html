@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль {{ profile_user.username }}{% endblock %}
+
+{% block content %}
+<h2>Профиль пользователя {{ profile_user.username }}</h2>
+
+{% if profile_user.avatar %}
+    <img src="{{ profile_user.avatar.url }}" alt="avatar" width="150">
+{% else %}
+    <p><em>Аватар не установлен</em></p>
+{% endif %}
+
+<p><strong>Имя пользователя:</strong> {{ profile_user.username }}</p>
+
+<hr>
+
+<p>Этот пользователь ещё не в ваших друзьях.</p>
+
+<form action="{% url 'add_friend' profile_user.username %}" method="post">
+    {% csrf_token %}
+    <button type="submit">➕ Добавить в друзья</button>
+</form>
+
+<a href="{% url 'user_list' %}"><button>📋 Список пользователей</button></a>
+<a href="{% url 'home' %}"><button>🏠 На главную</button></a>
+{% endblock %}

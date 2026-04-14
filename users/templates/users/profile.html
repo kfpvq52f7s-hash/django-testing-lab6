@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль {{ profile_user.username }}{% endblock %}
+
+{% block content %}
+<h2>Профиль пользователя {{ profile_user.username }}</h2>
+
+{% if profile_user.avatar %}
+    <img src="{{ profile_user.avatar.url }}" alt="avatar" width="150">
+{% else %}
+    <p><em>Аватар не установлен</em></p>
+{% endif %}
+
+<p><strong>Email:</strong> {{ profile_user.email }}</p>
+<p><strong>Телефон:</strong> {{ profile_user.phone|default:"не указан" }}</p>
+<p><strong>О себе:</strong> {{ profile_user.bio|default:"не указано" }}</p>
+
+{% if is_owner %}
+    <a href="{% url 'edit_profile' %}"><button>✏️ Редактировать профиль</button></a>
+{% elif is_mutual %}
+    <p>✅ Вы друзья!</p>
+    {% if is_friend %}
+        <form action="{% url 'remove_friend' profile_user.username %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">❌ Удалить из друзей</button>
+        </form>
+    {% else %}
+        <p><em>{{ profile_user.username }} добавил вас в друзья. Добавьте его в ответ?</em></p>
+        <form action="{% url 'add_friend' profile_user.username %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">➕ Добавить в друзья</button>
+        </form>
+    {% endif %}
+{% endif %}
+
+<a href="{% url 'user_list' %}"><button>📋 Список пользователей</button></a>
+<a href="{% url 'home' %}"><button>🏠 На главную</button></a>
+{% endblock %}

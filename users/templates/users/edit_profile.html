@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Редактирование профиля{% endblock %}
+
+{% block content %}
+<h2>Редактирование профиля</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+        <label>Телефон:</label><br>
+        <input type="text" name="phone" value="{{ user.phone|default:'' }}">
+    </p>
+    <p>
+        <label>О себе:</label><br>
+        <textarea name="bio" rows="5" cols="40">{{ user.bio|default:'' }}</textarea>
+    </p>
+    <p>
+        <label>Аватар:</label><br>
+        <input type="file" name="avatar" accept="image/*">
+        {% if user.avatar %}
+            <br><small>Текущий аватар: {{ user.avatar.name }}</small>
+        {% endif %}
+    </p>
+    <button type="submit">💾 Сохранить</button>
+</form>
+
+<a href="{% url 'profile' user.username %}"><button>↩️ Назад</button></a>
+{% endblock %}
