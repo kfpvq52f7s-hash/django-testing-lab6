@@ -4,10 +4,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from users.forms import CustomPasswordResetForm
+from users.views import CustomLoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    # Кастомный вход с логированием
+    path('auth/login/', CustomLoginView.as_view(), name='login'),
+
+    # Кастомные URL для восстановления пароля (с нашей формой)
     path('auth/password_reset/',
          auth_views.PasswordResetView.as_view(
              form_class=CustomPasswordResetForm,
@@ -33,9 +38,13 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
 
+    # Стандартные URL авторизации (кроме login, который мы заменили)
     path('auth/', include('django.contrib.auth.urls')),
+
+    # URL нашего приложения
     path('', include('users.urls')),
 ]
 
+# Для загрузки аватарок
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
