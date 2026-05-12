@@ -1,0 +1,28 @@
+2026-04-28 15:04:05 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-04-28 15:04:05 - INFO - root - logging_config.py:53 - Rotating log: C:\Users\sasha\PycharmProjects\5 лабораторная\logs\rotating.log
+2026-04-28 15:04:05 - INFO - root - logging_config.py:54 - Timed log: C:\Users\sasha\PycharmProjects\5 лабораторная\logs\timed.log
+2026-04-28 15:04:05 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-04-28 15:04:05 - INFO - root - logging_config.py:53 - Rotating log: C:\Users\sasha\PycharmProjects\5 лабораторная\logs\rotating.log
+2026-04-28 15:04:05 - INFO - root - logging_config.py:54 - Timed log: C:\Users\sasha\PycharmProjects\5 лабораторная\logs\timed.log
+2026-04-28 15:04:06 - INFO - django.utils.autoreload - autoreload.py:681 - Watching for file changes with StatReloader
+2026-04-28 15:06:13 - INFO - users.views - views.py:20 - User test66 logged in successfully
+2026-04-28 15:06:14 - INFO - users.views - views.py:81 - User test66 viewed user list
+2026-04-28 15:06:15 - INFO - users.views - views.py:65 - User test66 viewed friend's profile: test77
+2026-04-28 15:06:16 - INFO - users.views - views.py:97 - User test66 removed test77 from friends
+2026-04-28 15:06:16 - INFO - users.views - views.py:72 - User test66 viewed stranger's profile: test77
+2026-04-28 15:06:17 - INFO - users.views - views.py:81 - User test66 viewed user list
+2026-04-28 15:06:18 - INFO - users.views - views.py:58 - User test66 viewed their own profile
+2026-04-28 15:07:48 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-04-28 15:07:49 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-04-28 15:07:49 - INFO - django.utils.autoreload - autoreload.py:681 - Watching for file changes with StatReloader
+2026-04-28 15:07:52 - INFO - users.views - views.py:58 - User test66 viewed their own profile
+2026-04-28 15:08:01 - ERROR - users.views - views.py:115 - User test66 failed to upload avatar: ['File is not an image']
+Traceback (most recent call last):
+  File "C:\Users\sasha\PycharmProjects\5 лабораторная\users\views.py", line 112, in edit_profile
+    raise ValidationError("File is not an image")
+django.core.exceptions.ValidationError: ['File is not an image']
+2026-04-28 15:08:10 - INFO - users.views - views.py:113 - User test66 uploaded new avatar: OY.jpg
+2026-04-28 15:08:10 - INFO - users.views - views.py:122 - User test66 updated profile
+2026-04-28 15:08:10 - INFO - users.views - views.py:58 - User test66 viewed their own profile
+2026-04-28 15:08:11 - INFO - users.views - views.py:81 - User test66 viewed user list
+2026-04-28 15:08:13 - INFO - users.views - views.py:81 - User test66 viewed user list

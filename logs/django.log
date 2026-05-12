@@ -1,2 +1,65 @@
 INFO 2026-04-27 15:41:27,112 autoreload Watching for file changes with StatReloader
 INFO 2026-04-27 15:41:34,374 views User test66 viewed user list
+INFO 2026-04-28 14:23:52,387 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 14:24:00,387 views User test66 logged in successfully
+WARNING 2026-04-28 14:31:37,862 views Registration failed - validation errors: {"password2": [{"message": "\u0412\u0432\u0435\u0434\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u043e\u043b\u0438 \u043d\u0435 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u044e\u0442.", "code": "password_mismatch"}]}
+INFO 2026-04-28 14:31:51,087 views User registered successfully: test77 (email: test77@gmail.com)
+INFO 2026-04-28 14:32:29,912 views User test77 viewed user list
+INFO 2026-04-28 14:32:32,922 views User test77 viewed stranger's profile: test66
+INFO 2026-04-28 14:32:33,878 views User test77 added test66 as friend
+INFO 2026-04-28 14:32:33,891 views User test77 viewed friend's profile: test66
+INFO 2026-04-28 14:34:08,432 views User test77 viewed user list
+INFO 2026-04-28 14:34:09,397 views User test77 viewed friend's profile: test66
+INFO 2026-04-28 14:34:12,474 views User test77 viewed user list
+INFO 2026-04-28 14:34:14,024 views User test77 viewed stranger's profile: tets55
+INFO 2026-04-28 14:34:16,642 views User test77 added tets55 as friend
+INFO 2026-04-28 14:34:16,667 views User test77 viewed friend's profile: tets55
+INFO 2026-04-28 14:34:19,551 views User test77 viewed user list
+INFO 2026-04-28 14:34:23,435 views User test77 viewed friend's profile: test66
+INFO 2026-04-28 14:34:34,265 views User test77 viewed their own profile
+INFO 2026-04-28 14:34:34,986 views User test77 viewed user list
+INFO 2026-04-28 14:34:36,682 views User test77 viewed stranger's profile: test33
+INFO 2026-04-28 14:34:41,372 views User test77 viewed their own profile
+ERROR 2026-04-28 14:35:03,743 views User test77 failed to upload avatar: ['File is not an image']
+Traceback (most recent call last):
+  File "C:\Users\sasha\PycharmProjects\5 лабораторная\users\views.py", line 118, in edit_profile
+    raise ValidationError("File is not an image")
+django.core.exceptions.ValidationError: ['File is not an image']
+INFO 2026-04-28 14:35:08,465 views User test77 viewed their own profile
+INFO 2026-04-28 14:35:14,437 views User test77 viewed their own profile
+INFO 2026-04-28 14:35:35,440 views User test77 uploaded new avatar: УМ.jpg
+INFO 2026-04-28 14:35:35,457 views User test77 updated profile
+INFO 2026-04-28 14:35:35,473 views User test77 viewed their own profile
+INFO 2026-04-28 14:35:37,186 views User test77 viewed their own profile
+INFO 2026-04-28 14:44:26,204 autoreload C:\Users\sasha\PycharmProjects\5 лабораторная\users\views.py changed, reloading.
+INFO 2026-04-28 14:44:26,818 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 14:44:49,520 autoreload C:\Users\sasha\PycharmProjects\5 лабораторная\lab5\urls.py changed, reloading.
+INFO 2026-04-28 14:44:50,415 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 14:45:31,574 autoreload C:\Users\sasha\PycharmProjects\5 лабораторная\lab5\urls.py changed, reloading.
+INFO 2026-04-28 14:45:32,349 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 14:45:42,794 autoreload C:\Users\sasha\PycharmProjects\5 лабораторная\users\views.py changed, reloading.
+INFO 2026-04-28 14:45:43,426 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 14:46:30,515 autoreload C:\Users\sasha\PycharmProjects\5 лабораторная\lab5\urls.py changed, reloading.
+INFO 2026-04-28 14:46:31,102 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 14:46:37,904 views User test77 viewed their own profile
+INFO 2026-04-28 14:46:38,792 views User test77 viewed user list
+INFO 2026-04-28 14:46:39,926 views User test77 viewed friend's profile: test66
+INFO 2026-04-28 14:46:42,124 views User test77 viewed user list
+INFO 2026-04-28 14:46:43,955 views User test77 viewed user list
+INFO 2026-04-28 14:46:45,513 views User test77 viewed user list
+INFO 2026-04-28 14:46:46,281 views User test77 viewed friend's profile: test66
+INFO 2026-04-28 14:49:05,370 views User test66 logged in successfully
+INFO 2026-04-28 14:49:06,592 views User test66 viewed user list
+INFO 2026-04-28 14:49:07,593 views User test66 viewed friend's profile: test77
+INFO 2026-04-28 14:51:40,780 views User test66 viewed their own profile
+INFO 2026-04-28 14:51:45,328 views User test66 viewed user list
+INFO 2026-04-28 14:51:46,600 views User test66 viewed friend's profile: test77
+INFO 2026-04-28 14:51:49,711 views User test66 removed test77 from friends
+INFO 2026-04-28 14:51:49,731 views User test66 viewed stranger's profile: test77
+INFO 2026-04-28 15:01:17,787 autoreload Watching for file changes with StatReloader
+INFO 2026-04-28 15:01:22,435 views User test66 viewed their own profile
+INFO 2026-04-28 15:01:44,022 views User test66 viewed their own profile
+INFO 2026-04-28 15:01:44,791 views User test66 viewed user list
+INFO 2026-04-28 15:01:46,039 views User test66 viewed stranger's profile: test77
+INFO 2026-04-28 15:01:47,814 views User test66 added test77 as friend
+INFO 2026-04-28 15:01:47,834 views User test66 viewed friend's profile: test77

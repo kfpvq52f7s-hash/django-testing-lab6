@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',  # наше приложение
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -99,8 +99,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/auth/login/'
 
-# Настройки почты (файловый бэкенд с декодированием)
-EMAIL_BACKEND = 'users.email_backend.ReadableEmailBackend'
+# Настройки почты (файловый бэкенд)
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
 
 # Базовый URL для ссылок в письмах
@@ -113,33 +113,6 @@ DEFAULT_CHARSET = 'utf-8'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-import os
-import logging
-
-# Настройка логирования
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {message}',
-            'style': '{',
-        },
-    },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
-            'formatter': 'verbose',
-            'encoding': 'utf-8',
-        },
-    },
-    'root': {
-        'handlers': ['console', 'file'],
-        'level': 'DEBUG',
-    },
-}
+# ========== НАСТРОЙКИ ЛОГИРОВАНИЯ ==========
+from .logging_config import setup_logging
+setup_logging()

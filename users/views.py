@@ -9,7 +9,6 @@ from django.core.exceptions import ValidationError
 from .forms import CustomUserCreationForm
 from .models import CustomUser
 
-# Создаём логгер для модуля
 logger = logging.getLogger(__name__)
 
 
@@ -55,7 +54,6 @@ def profile(request, username):
         logger.warning(f"Unauthenticated user tried to view profile: {username}")
         return redirect('login')
 
-    # Если это свой профиль
     if user == profile_user:
         logger.info(f"User {user.username} viewed their own profile")
         return render(request, 'users/profile.html', {
@@ -63,7 +61,6 @@ def profile(request, username):
             'is_owner': True,
         })
 
-    # Если это профиль друга
     if profile_user in user.friends.all():
         logger.info(f"User {user.username} viewed friend's profile: {username}")
         return render(request, 'users/profile.html', {
@@ -72,7 +69,6 @@ def profile(request, username):
             'is_friend': True,
         })
 
-    # Если это профиль не-друга
     logger.info(f"User {user.username} viewed stranger's profile: {username}")
     return render(request, 'users/stranger_profile.html', {
         'profile_user': profile_user,
@@ -109,11 +105,9 @@ def edit_profile(request):
         user.phone = request.POST.get('phone', '')
         user.bio = request.POST.get('bio', '')
 
-        # Обработка аватарки с логированием ошибок
         if request.FILES.get('avatar'):
             try:
                 user.avatar = request.FILES['avatar']
-                # Проверка типа файла
                 if not user.avatar.name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
                     raise ValidationError("File is not an image")
                 logger.info(f"User {user.username} uploaded new avatar: {user.avatar.name}")

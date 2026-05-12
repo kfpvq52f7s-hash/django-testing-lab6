@@ -1,0 +1,52 @@
+2026-05-05 14:55:43 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 14:55:44 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 14:55:44 - INFO - django.utils.autoreload - autoreload.py:667 - Watching for file changes with StatReloader
+2026-05-05 14:56:41 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 14:56:42 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 14:56:42 - INFO - django.utils.autoreload - autoreload.py:667 - Watching for file changes with StatReloader
+2026-05-05 14:58:13 - INFO - users.views - views.py:37 - User registered successfully: Nikita (email: butkov1990@icloud.com)
+2026-05-05 14:58:23 - INFO - users.views - views.py:58 - User Nikita viewed their own profile
+2026-05-05 14:58:26 - INFO - users.views - views.py:81 - User Nikita viewed user list
+2026-05-05 14:58:38 - INFO - users.views - views.py:81 - User Nikita viewed user list
+2026-05-05 15:00:25 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 15:00:47 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 15:00:48 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 15:00:50 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 15:03:17 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 15:03:18 - INFO - root - logging_config.py:52 - === Logging system initialized ===
+2026-05-05 15:03:18 - INFO - django.utils.autoreload - autoreload.py:667 - Watching for file changes with StatReloader
+2026-05-05 15:04:26 - INFO - users.views - views.py:37 - User registered successfully: nikita (email: butkov1990@icloud.com)
+2026-05-05 15:04:29 - INFO - users.views - views.py:81 - User nikita viewed user list
+2026-05-05 15:04:34 - INFO - users.views - views.py:72 - User nikita viewed stranger's profile: admin
+2026-05-05 15:04:35 - INFO - users.views - views.py:89 - User nikita added admin as friend
+2026-05-05 15:04:35 - INFO - users.views - views.py:65 - User nikita viewed friend's profile: admin
+2026-05-05 15:04:36 - INFO - users.views - views.py:97 - User nikita removed admin from friends
+2026-05-05 15:04:36 - INFO - users.views - views.py:72 - User nikita viewed stranger's profile: admin
+2026-05-05 15:04:37 - INFO - users.views - views.py:81 - User nikita viewed user list
+2026-05-05 15:04:40 - INFO - users.views - views.py:58 - User nikita viewed their own profile
+2026-05-05 15:34:19 - WARNING - users.views - views.py:41 - Registration failed - validation errors: {"username": [{"message": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0441 \u0442\u0430\u043a\u0438\u043c \u0438\u043c\u0435\u043d\u0435\u043c \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442.", "code": "unique"}]}
+2026-05-05 15:34:58 - WARNING - users.views - views.py:41 - Registration failed - validation errors: {"password2": [{"message": "\u0412\u0432\u0435\u0434\u0435\u043d\u043d\u044b\u0435 \u043f\u0430\u0440\u043e\u043b\u0438 \u043d\u0435 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u044e\u0442.", "code": "password_mismatch"}]}
+2026-05-05 15:35:19 - INFO - users.views - views.py:37 - User registered successfully: den (email: butko1990@icloud.comn)
+2026-05-05 15:37:54 - INFO - users.views - views.py:20 - User den logged in successfully
+2026-05-05 15:37:59 - INFO - users.views - views.py:58 - User den viewed their own profile
+2026-05-05 15:38:16 - INFO - users.views - views.py:81 - User den viewed user list
+2026-05-05 15:38:23 - INFO - users.views - views.py:72 - User den viewed stranger's profile: nikita
+2026-05-05 15:38:53 - INFO - users.views - views.py:72 - User den viewed stranger's profile: admin
+2026-05-05 15:38:55 - INFO - users.views - views.py:89 - User den added admin as friend
+2026-05-05 15:38:55 - INFO - users.views - views.py:65 - User den viewed friend's profile: admin
+2026-05-05 15:39:03 - INFO - users.views - views.py:97 - User den removed admin from friends
+2026-05-05 15:39:03 - INFO - users.views - views.py:72 - User den viewed stranger's profile: admin
+2026-05-05 15:39:06 - INFO - users.views - views.py:89 - User den added admin as friend
+2026-05-05 15:39:06 - INFO - users.views - views.py:65 - User den viewed friend's profile: admin
+2026-05-05 15:39:07 - INFO - users.views - views.py:97 - User den removed admin from friends
+2026-05-05 15:39:07 - INFO - users.views - views.py:72 - User den viewed stranger's profile: admin
+2026-05-05 15:39:08 - INFO - users.views - views.py:89 - User den added admin as friend
+2026-05-05 15:39:08 - INFO - users.views - views.py:65 - User den viewed friend's profile: admin
+2026-05-05 15:39:10 - INFO - users.views - views.py:97 - User den removed admin from friends
+2026-05-05 15:39:10 - INFO - users.views - views.py:72 - User den viewed stranger's profile: admin
+2026-05-05 15:39:23 - INFO - users.views - views.py:89 - User den added admin as friend
+2026-05-05 15:39:23 - INFO - users.views - views.py:65 - User den viewed friend's profile: admin
+2026-05-05 15:39:25 - INFO - users.views - views.py:81 - User den viewed user list
+2026-05-05 15:39:43 - INFO - users.views - views.py:72 - User den viewed stranger's profile: nikita
+2026-05-05 15:39:54 - WARNING - users.views - views.py:54 - Unauthenticated user tried to view profile: nikita
+2026-05-05 15:41:15 - INFO - users.views - views.py:37 - User registered successfully: fake (email: fake@12.com)

@@ -3,9 +3,10 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 @pytest.mark.django_db
 class TestUserModel:
-    
+
     def test_create_user(self):
         user = User.objects.create_user(
             username='testuser',
@@ -17,7 +18,7 @@ class TestUserModel:
         assert user.email == 'test@example.com'
         assert user.phone == '+79991234567'
         assert user.check_password('testpass123')
-    
+
     def test_create_superuser(self):
         admin = User.objects.create_superuser(
             username='admin',
@@ -26,11 +27,11 @@ class TestUserModel:
         )
         assert admin.is_superuser
         assert admin.is_staff
-    
+
     def test_user_str_method(self):
         user = User.objects.create_user(username='testuser', password='pass')
         assert str(user) == 'testuser'
-    
+
     @pytest.mark.parametrize('username,email,password', [
         ('user_a', 'a@test.com', 'pass123'),
         ('user_b', 'b@test.com', 'pass456'),
