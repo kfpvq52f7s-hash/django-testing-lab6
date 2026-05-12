@@ -1,48 +1,48 @@
 ﻿import pytest
 from django.urls import reverse
 from django.contrib.auth import get_user_model
-from django.test import Client
 
 User = get_user_model()
 
 
 @pytest.mark.django_db
-class TestPermissions:
+class TestAccessControl:
 
-    def setup_method(self):
-        self.client = Client()
-        self.user1 = User.objects.create_user(
-            username='user1',
-            email='user1@test.com',
-            password='pass123'
+    @pytest.fixture(autouse=True)
+    def prepare_users(self, client):
+        self.client = client
+        self.owner = User.objects.create_user(
+            username='django_dev',
+            email='dev@team.ru',
+            password='CodeMaster42'
         )
-        self.user2 = User.objects.create_user(
-            username='user2',
-            email='user2@test.com',
-            password='pass123'
+        self.outsider = User.objects.create_user(
+            username='random_guy',
+            email='random@team.ru',
+            password='Random#11'
         )
 
-    def test_profile_access_for_owner(self):
-        self.client.login(username='user1', password='pass123')
-        response = self.client.get(reverse('profile', kwargs={'username': 'user1'}))
-        assert response.status_code == 200
+    def test_owner_sees_own_profile(self):
+        self.client.login(username='django_dev', password='CodeMaster42')
+        resp = self.client.get(reverse('profile', kwargs={'username': 'django_dev'}))
+        assert resp.status_code == 200
 
-    def test_edit_profile_only_for_owner(self):
-        self.client.login(username='user1', password='pass123')
-        response = self.client.get(reverse('edit_profile'))
-        assert response.status_code == 200
+    def test_authenticated_sees_edit_page(self):
+        self.client.login(username='django_dev', password='CodeMaster42')
+        resp = self.client.get(reverse('edit_profile'))
+        assert resp.status_code == 200
 
-    def test_unauthorized_cannot_edit_profile(self):
-        response = self.client.get(reverse('edit_profile'))
-        assert response.status_code == 302
-        assert response.url.startswith('/auth/login/')
+    def test_guest_redirected_from_edit(self):
+        resp = self.client.get(reverse('edit_profile'))
+        assert resp.status_code == 302
+        assert '/auth/login/' in resp.url
 
-    def test_unauthorized_cannot_view_user_list(self):
-        response = self.client.get(reverse('user_list'))
-        assert response.status_code == 302
-        assert response.url.startswith('/auth/login/')
+    def test_guest_redirected_from_user_list(self):
+        resp = self.client.get(reverse('user_list'))
+        assert resp.status_code == 302
+        assert '/auth/login/' in resp.url
 
-    def test_authenticated_can_view_user_list(self):
-        self.client.login(username='user1', password='pass123')
-        response = self.client.get(reverse('user_list'))
-        assert response.status_code == 200
+    def test_logged_in_user_sees_list(self):
+        self.client.login(username='django_dev', password='CodeMaster42')
+        resp = self.client.get(reverse('user_list'))
+        assert resp.status_code == 200

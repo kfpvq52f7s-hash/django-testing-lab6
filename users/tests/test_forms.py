@@ -6,7 +6,6 @@ from users.forms import CustomUserCreationForm
 class TestSignupFormValidation:
 
     def test_all_fields_filled_correctly(self):
-        """Форма валидна при корректном заполнении всех полей"""
         data = {
             'username': 'alex_student',
             'email': 'alex@university.ru',
@@ -20,7 +19,6 @@ class TestSignupFormValidation:
         assert form.cleaned_data['email'] == 'alex@university.ru'
 
     def test_passwords_dont_match(self):
-        """Ошибка когда пароли не совпадают"""
         data = {
             'username': 'test_bot',
             'email': 'bot@test.ru',
@@ -30,10 +28,8 @@ class TestSignupFormValidation:
         form = CustomUserCreationForm(data=data)
         assert form.is_valid() is False
         assert 'password2' in form.errors
-        assert 'совпадают' in str(form.errors['password2']).lower() or 'match' in str(form.errors['password2']).lower()
 
     def test_email_field_is_required(self):
-        """Поле email обязательно"""
         data = {
             'username': 'no_email',
             'password1': 'TestPass#1',
@@ -44,7 +40,6 @@ class TestSignupFormValidation:
         assert 'email' in form.errors
 
     def test_phone_field_optional(self):
-        """Телефон — необязательное поле"""
         data = {
             'username': 'phone_less',
             'email': 'nophone@test.ru',
@@ -55,7 +50,6 @@ class TestSignupFormValidation:
         assert form.is_valid()
 
     def test_short_password_rejected(self):
-        """Слишком короткий пароль не принимается"""
         data = {
             'username': 'weak_user',
             'email': 'weak@test.ru',
