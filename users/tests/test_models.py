@@ -40,13 +40,13 @@ class TestCustomUserDatabase:
         )
         assert str(user) == 'ironman'
 
-    def test_email_case_preserved(self):
+    def test_email_is_lowercased_by_django(self):
         user = User.objects.create_user(
             username='mixedcase',
             email='Mixed.CASE@Example.RU',
             password='Case12345'
         )
-        assert user.email == 'Mixed.CASE@Example.RU'
+        assert user.email == 'mixed.case@example.ru'
 
     @pytest.mark.parametrize('login,email_addr,phone_num', [
         ('volunteer1', 'vol1@ngo.org', '+79160001122'),

@@ -43,6 +43,7 @@ class TestSignupFormValidation:
         data = {
             'username': 'phone_less',
             'email': 'nophone@test.ru',
+            'phone': '',
             'password1': 'NoPhone#1',
             'password2': 'NoPhone#1'
         }
