@@ -39,16 +39,15 @@ class TestSignupFormValidation:
         assert form.is_valid() is False
         assert 'email' in form.errors
 
-    def test_phone_field_optional(self):
+    def test_username_is_required(self):
         data = {
-            'username': 'phone_less',
-            'email': 'nophone@test.ru',
-            'phone': '',
-            'password1': 'NoPhone#1',
-            'password2': 'NoPhone#1'
+            'email': 'user@test.ru',
+            'password1': 'ValidPass1',
+            'password2': 'ValidPass1'
         }
         form = CustomUserCreationForm(data=data)
-        assert form.is_valid()
+        assert form.is_valid() is False
+        assert 'username' in form.errors
 
     def test_short_password_rejected(self):
         data = {
